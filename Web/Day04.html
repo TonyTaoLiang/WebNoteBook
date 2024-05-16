@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+    div {
+      /* width: 500px; */
+      /* background-color: aquamarine; */
+      /* 不让div独占 */
+      /* display: inline-block;
+      vertical-align: top; */
+      /* 浮动不让div独占一行 */
+      /* float: left; */
+    }
+    img {
+      width: 500px;
+      height: 400px;
+    } 
+    span {
+      font-size: 30px;
+      color: white;
+      background-color: chocolate;
+    }
+    p {
+      text-decoration: line-through;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+     /* 子代 */
+    /* .home span{
+      color: brown;
+    } */
+    .home > span {/*直接子代*/
+      color: brown;
+    }
+    p.box { /*交集即是p也是box*/
+      color: aquamarine;
+    }
+    .pseudo:hover {/*伪类*/
+      color: red;
+    }
+    .pseudo_element::before {
+      content: "123";
+      color: red;
+    }
+    .pseudo_element::after {
+      content: "321";
+      color: yellow;
+    }
+    .Center_Block {
+      width: 300px;
+      /* background-color: red; */
+      margin: 0 auto;/*让带有固定宽度的div元素在其父元素中水平居中显示  表示上下0，左右auto*/
+      /* text-align: center; 这个是inline-level 行内级才能居中 */
+      border: 1px solid red;
+      padding: 10px 20px 30px 40px; /*内边距0点方向顺时针上右下左*/
+    }
+  </style>
+  <link rel="stylesheet" href="./Reset/fontsize.css">
+</head>
+<body>
+
+  <h1>Hello</h1> 
+  <div class="home">
+    <h3>No1</h3>
+    <img src="./image/IMG_5088.PNG" alt="JM">
+    <p>签名<span>MD5</span>值是指应用程序在发布到应用商店之前，由开发者使用签名证书对应用程序进行数字签名后所得的 MD5值。APP特征信息中的MD5值，指的是APP证书的数字指纹值。
+    </p>
+    <span>直接子代</span>
+  </div>
+  <div>
+    <h3>No2</h3>
+    <img src="./image/IMG_5088.PNG" alt="JM">
+    <p>签名<span>MD5</span>值是指应用程序在发布到应用商店之前，由开发者使用签名证书对应用程序进行数字签名后所得的 MD5值。APP特征信息中的MD5值，指的是APP证书的数字指纹值。
+    </p>
+  </div>
+
+  <p class="box">交集选择器</p>
+  <span class="box">交集选择器</span>
+  <div class="pseudo">hover伪类</div>
+  <div class="pseudo_element">我是伪元素</div>
+  <div class="Center_Block">居中块级元素</div>
+
+</body>
+</html>

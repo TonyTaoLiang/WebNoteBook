@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 300px;
+    height: 200px;
+    background-color: red;
+    /*解决方案3种*/
+    /* border: 1px solid black; */
+    /* padding-top: 50px; */ /*设置padding内边距而不设置下面.container的margin*/
+    overflow: auto; /*触发BFC：BFC即“Block Formatting Context（块级格式化上下文）”，是CSS中的一个概念，用于描述块级盒子布局及外边距折叠的行为规则。BFC是一个独立的渲染区域，内部的块级盒子会按照一定规则进行布局，不会影响到外部的布局。*/
+    /* 总结：margin设置兄弟元素。padding设置父子元素。 */
+  }
+  .container {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    margin-top: 50px;/*设置内层的margin-top会导致传递到上层的.box*/
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="container">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    div.one {
+      color: red !important; /* 权重10000 */
+    }
+/* 类选择器10 */  
+    .two.three {
+      color: blue;
+    }
+/* id选择器100 */
+    #man {
+      color: #000;
+    }
+    /* 1 */
+  div {
+    color: yellow;
+  }
+  </style>
+</head>
+<body>
+  <!-- 内联样式1000 -->
+  <div id="Man" class="one two three" style="color: blueviolet;">继承权重</div>
+</body>
+</html>
