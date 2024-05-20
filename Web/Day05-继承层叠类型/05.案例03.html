@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  a {
+    display: inline-block;
+    color: red;
+  }
+  .item {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .item .album img{
+    width: 100%;
+    border-radius: 8px;
+  }
+  /* .item .info {
+    text-align: center;
+  } */
+  .item .info .anchor {
+    color: #888;
+    /* text-align: center; 这里设置居中没用因为info还包裹了p元素 */
+    font-size: 12px;
+  }
+  .item .info .anchor::before {
+    display: inline-block;
+    content: url(../image/up.svg);
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 8px;
+    right: 6px;
+  }
+  .item .info a {
+    width: 100%; /*需要设置p元素的父元素的宽度，下面p才能显示一行。。。有点类似ios少了宽度约束就无限延伸*/
+  }
+  .item .info p {
+    /*显示一行*/
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*显示多行*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+</style>
+<link rel="stylesheet" href="../CSS/reset.css">
+<body>
+  <div class="item">
+    <div class="album">
+      <a href="#">
+        <img src="https://i1.hdslb.com/bfs/archive/84127b4d2bc316334f240eff6edd043b83d72e03.jpg@672w_378h_1c_!web-home-common-cover.avif" referrerpolicy="no-referrer" alt="">
+      </a>
+    </div>
+    <div class="info">
+      <a href="#">
+        <p>这小奶音太好玩啦！这小奶音太好玩啦！这小奶音太好玩啦！这小奶音太好玩啦！这小奶音太好玩啦！这小奶音太好玩啦！</p>
+      </a>
+      <a class="anchor" href="#">
+        <span>村花陈不丁</span>
+        <span>·5-20</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

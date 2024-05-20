@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .mi {
+    display: inline-block;
+    width: 234px;
+    height: 300px;
+    margin: 10px;
+    padding: 20px 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  .mi:hover {
+    box-shadow: 0 5px 10px 5px #333;
+  }
+  .mi img {
+    width: 160px;
+  }
+  .mi .title {
+    font-size: 14px;
+    color: #333;
+    margin: 18px 0 2px;
+    }
+  .mi .des {
+    font-size: 12px;
+    color: #b0b0b0;
+    margin: 0 10px 10px;
+    /* 一行显示...方法 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mi .price {
+    color: red;
+  }
+  .mi .price_deprecated {
+    color: #b0b0b0;
+    text-decoration: line-through;
+  }
+</style>
+<link rel="stylesheet" href="../CSS/reset.css">
+<body>
+<a class="mi" href="#">
+  <img class="img" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cfec307342eb35ee4a437f664004c50f.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+  <h3 class="title">Redmi手表</h3>
+  <p class="des">35g超轻/1.4"大屏/多功能NFC/7天长续航</p>
+  <span class="price">199元</span>
+  <span class="price_deprecated">299元</span>
+</a>
+</body>
+</html>
