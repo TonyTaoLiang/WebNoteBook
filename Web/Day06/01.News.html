@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="../CSS/index.css">
+<style>
+
+ul > li {
+  margin-top: 5px;
+}
+
+ul > li > a {
+  display: inline-block;
+}
+
+ul > li > a:hover {
+  color: red;
+}
+
+ul > li .content {
+  display: inline-block;
+}
+
+ul > li .ranking {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 700;
+  color: #999;
+}
+
+/* 伪类: 结构伪类  选择第一行 注意要精确到ranking 不然则ranking是继承li，被上面精确到ul > li .ranking的颜色#999覆盖掉*/
+ul >li:nth-child(1) .ranking {
+  color: red;
+}
+
+ul > li:nth-child(2) .ranking {
+  color: #0f0;
+}
+
+ul > li .icon {
+  display: inline-block;
+  /*注意要设置为块级元素才能设置宽高 显示图片*/
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 4px;
+  left: 3px;
+}
+/*同一个i元素设置2个class（icon+hot / icon+new） 分别设置样式 抽离相同代码*/
+ul > li .hot {
+  background-image: url(../image/hotboard_hot.428fe145.svg);
+}
+
+ul > li .new {
+  background-image: url(../image/hotboard_new.4baf3f5c.svg);
+}
+
+</style>
+<body>
+  <ul>
+    <li class="item">
+      <a href="#">
+        <span class="ranking">1</span>
+        <div class="content">
+          王毅:赖清德之流背叛民族和祖先
+        </div>
+        <i class="icon hot"></i>
+      </a>
+    </li>
+    <li class="item">
+      <a href="#">
+        <span class="ranking">2</span>
+        <div class="content">
+          华春莹发布美国宣布与中国建交视频
+        </div>
+        <i class="icon new"></i>
+      </a>
+    </li>
+  </ul>
+</body>
+</html>
