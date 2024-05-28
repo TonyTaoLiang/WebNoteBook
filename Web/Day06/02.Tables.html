@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  td {
+    border: 1px solid black;
+  }
+
+  tbody,
+  tfoot {
+    font-weight: 200;
+  }
+
+  /* 前2行，n的取值从0开始 */
+  tr:nth-child(-n+2) {
+    font-weight: 500;
+  }
+
+  /* 属性选择器 */
+  tbody>tr td[rowspan] {
+    color: red;
+  }
+</style>
+
+<body>
+  <table>
+    <caption>Tables</caption>
+    <thead>
+      <tr>
+        <td>
+          <div>1</div>
+          <span>1</span>
+        </td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="2">4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td rowspan="2">9</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>11</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>others</td>
+        <td>others</td>
+        <td>others</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+<!-- <table> -->
+<!-- 快速创建5*6的单元格 -->
+<!-- tr*5>td{数学}*6 -->
+<!-- </table> -->
+
+</html>

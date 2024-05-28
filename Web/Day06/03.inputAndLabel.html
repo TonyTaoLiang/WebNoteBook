@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <label for="username">
+    UserName: <input id="username" , type="text">
+  </label>
+
+
+  <!-- 在类型为radio的input中，如果name一致那么2个互斥 只能点击一个单选 单选框 -->
+  <label for="male">
+    male: <input id="male" , type="radio" name="sex" value="male">
+  </label>
+  <label for="female">
+    female: <input id="female" , type="radio" name="sex" value="female">
+  </label>
+
+
+  <!-- 复选框 -->
+  <form action="/cba">
+    <div>
+      <label for="basketball">
+        male: <input id="basketball" , type="checkbox" name="hobby" value="basketball">
+      </label>
+      <label for="football">
+        female: <input id="football" , type="checkbox" name="hobby" value="football">
+      </label>
+    </div>
+    <button>提交</button>
+    <input type="submit" name="提交" id="">
+  </form>
+
+</body>
+
+</html>
