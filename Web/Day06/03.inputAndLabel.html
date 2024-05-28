@@ -7,23 +7,30 @@
   <title>Document</title>
 </head>
 
+<style>
+  textarea {
+    resize: horizontal;
+  }
+</style>
+
 <body>
-  <label for="username">
-    UserName: <input id="username" , type="text">
-  </label>
 
+  <!-- 复选框  子元素需要name属性-->
+  <!-- form:提交 -->
+  <form action="/cba" method="post" target="_blank">
+    <label for="username">
+      UserName: <input id="username" , type="text" name="username">
+    </label>
+  
+  
+    <!-- 在类型为radio的input中，如果name一致那么2个互斥 只能点击一个单选 单选框 -->
+    <label for="male">
+      male: <input id="male" , type="radio" name="sex" value="male">
+    </label>
+    <label for="female">
+      female: <input id="female" , type="radio" name="sex" value="female">
+    </label>
 
-  <!-- 在类型为radio的input中，如果name一致那么2个互斥 只能点击一个单选 单选框 -->
-  <label for="male">
-    male: <input id="male" , type="radio" name="sex" value="male">
-  </label>
-  <label for="female">
-    female: <input id="female" , type="radio" name="sex" value="female">
-  </label>
-
-
-  <!-- 复选框 -->
-  <form action="/cba">
     <div>
       <label for="basketball">
         male: <input id="basketball" , type="checkbox" name="hobby" value="basketball">
@@ -32,7 +39,26 @@
         female: <input id="football" , type="checkbox" name="hobby" value="football">
       </label>
     </div>
-    <button>提交</button>
+
+  <!-- 留言板/下拉框 -->
+    <div>
+      <label for="textarea">
+        留言：
+        <textarea name="text" id="textarea" cols="30" rows="10"></textarea>
+      </label>
+    </div>
+    <div>
+      <label for="fruit">
+        喜爱的食物：
+        <select name="fruit" id="fruit" size="2">
+          <option value="apple" >apple</option>
+          <option value="banana" selected>banana</option>
+          <option value="pineapple" selected>pineapple</option>
+        </select>
+      </label>
+    </div>
+
+    <button type="reset">提交</button>
     <input type="submit" name="提交" id="">
   </form>
 
