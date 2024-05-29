@@ -6,9 +6,78 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <table> -->
-<!-- 快速创建5*6的单元格 -->
-<!-- tr*5>td{数学}*6 这就是emmet语法 类似的还有！ >子类 +兄弟 ^上一级  -->
-<!-- </table> --> 
+  <table>
+
+<!-- 快速创建5*6的单元格 >子类 +兄弟 ^上一级 $数字-->
+<!-- tr*5>td{数学$$$}*6+div{td兄弟}^^div{上上级table中子元素div} -->
+<tr>
+  <td>数学001</td>
+  <td>数学002</td>
+  <td>数学003</td>
+  <td>数学004</td>
+  <td>数学005</td>
+  <td>数学006</td>
+  <div>td兄弟</div>
+</tr>
+<tr>
+  <td>数学001</td>
+  <td>数学002</td>
+  <td>数学003</td>
+  <td>数学004</td>
+  <td>数学005</td>
+  <td>数学006</td>
+  <div>td兄弟</div>
+</tr>
+<tr>
+  <td>数学001</td>
+  <td>数学002</td>
+  <td>数学003</td>
+  <td>数学004</td>
+  <td>数学005</td>
+  <td>数学006</td>
+  <div>td兄弟</div>
+</tr>
+<tr>
+  <td>数学001</td>
+  <td>数学002</td>
+  <td>数学003</td>
+  <td>数学004</td>
+  <td>数学005</td>
+  <td>数学006</td>
+  <div>td兄弟</div>
+</tr>
+<tr>
+  <td>数学001</td>
+  <td>数学002</td>
+  <td>数学003</td>
+  <td>数学004</td>
+  <td>数学005</td>
+  <td>数学006</td>
+  <div>td兄弟</div>
+</tr>
+<div>上上级table中子元素div</div>
+</table> 
+
+
+<!-- a[href="https//baidu.com"]{百度一下} -->
+<a href="https//baidu.com">百度一下</a>
+
+<!-- 简写id和class -->
+<!-- #main --> 
+<div id="main"></div>
+<!-- .box -->
+<div class="box"></div>
+
+<!-- 隐式标签，.box不一定生成的是div，ul里面子元素是li会默认生成li -->
+<!-- ul>.item{序号$}*6 -->
+<ul>
+  <li class="item">序号1</li>
+  <li class="item">序号2</li>
+  <li class="item">序号3</li>
+  <li class="item">序号4</li>
+  <li class="item">序号5</li>
+  <li class="item">序号6</li>
+</ul>
+
 </body>
 </html>
