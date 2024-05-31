@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box {
+      background-color: red;
+      height: 363px;
+    }
+
+    img {
+      position: relative;/*relative相对于自己原来的位置*/
+      /* 为了让图片在浏览器缩放时始终保持在div中间，先往左移一半 */
+      /* left: -708px;写死 */
+      transform: translate(-50%);/*相对自己*/
+      /* 再往右移动div的一半*/
+      margin-left: 50%; /*margin-left相对容器*/
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="../image/banner.png" alt="">
+  </div>
+</body>
+</html>

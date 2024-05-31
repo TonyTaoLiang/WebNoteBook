@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .box {
+    position: fixed;/*脱离标准流不占位置，移动相对于视口（浏览器可看见的地方，视口和画布的区别类似于tableview手机屏幕和UI可滚动的区域）*/
+    bottom: 20px;
+    right: 10px;
+  }
+  .box .item {
+    text-align: center;
+    line-height: 40px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 20px;
+  }
+
+  .box .top {
+    margin-bottom: 10px;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="item top">置顶</div>
+    <div class="item bottom">反馈</div>
+  </div>
+</body>
+</html>
