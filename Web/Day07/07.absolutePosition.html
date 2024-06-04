@@ -30,6 +30,25 @@ width:auto
     /*将图片下面多出来的区域去除*/
     vertical-align: top;
   }
+
+  /* 公共的css抽取精灵图 */
+  .sprite_02 {
+    background-image: url(../image/music_sprite_02.png);
+    display: inline-block;
+  }
+
+  .sprite_02_icon_music {
+    background-position: 0px -24px;
+    width: 14px;
+    height: 11px;
+  }
+
+  .sprite_02_icon_play {
+      width: 16px;
+      height: 17px;
+      background-position: 0 0;
+  }
+
   .cover {
     background: url(../image/coverall.png) no-repeat 0px 0px;
     position: absolute;
@@ -39,13 +58,53 @@ width:auto
     bottom: 0;
   }
 
+  .item .top .info {
+    background: url(../image/coverall.png) no-repeat 0px -537px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 27px;
+    line-height: 27px;
+    padding-left: 10px;
+  }
+
+  .item .top .info .icon-music{
+    /* 左右居中 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* 向上平移，上下居中 */
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+
+  .item .top .info .icon-play{
+    /* 上下居中 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0;
+}
+  
+  .item .top .info .count{
+    color: white;
+    
+  }
 </style>
 
 <body>
   <div class="item">
     <div class="top">
-      <img src="../image/cloudMusic.jpeg" alt="">
+      <img src="../image/music_album01.jpg" alt="">
       <a class="cover" href="#"></a>
+      <div class="info">
+        <i class="sprite_02 sprite_02_icon_music icon-music"></i>
+        <span class="count">60W</span>
+        <i class="sprite_02 sprite_02_icon_play icon-play"></i>
+      </div>
     </div>
     <div class="bottom">
       那些你熟悉却又不知道名字的轻音乐
