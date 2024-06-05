@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 在整体1190，item每个230 margin-right10的情况下第五个元素会摆不下
+    那么如果把宽度提高到1200，这样在整体list居中的情况下，item会往左偏10px
+    解决方案：所有item包裹一层warp，设置warp的margin为负值-10px，这样warp会强行扩展10px，这样就能在整体1190的情况下摆放5个item且是居中的。相当于是在底部垫一层看不见的宽容器，精妙的解法。
+  -->
+  <style>
+    .list {
+      width: 1190px;
+      height: 800px;
+      background-color: orange;
+      margin: 0 auto;
+    }
+
+    .warp {
+      margin-right: -10px;
+    }
+
+    .list .item {
+      width: 230px;
+      height: 322px;
+      background-color: purple; 
+      float: left;
+      margin-right: 10px;
+    }
+  </style>
+  
+<div class="list">
+  <div class="warp">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+</div>
+
+</body>
+</html>
