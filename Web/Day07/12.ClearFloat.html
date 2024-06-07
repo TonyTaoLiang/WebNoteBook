@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .content {
+    width: 1100px;
+    background-color: red;
+    margin: 0 auto;
+  }
+
+  .item {
+    float: left;
+    color: white;
+    background: purple;
+    margin-left: 10px;
+  }
+
+  .item.left {
+    width: 262.5px;
+    height: 610px;
+  }
+
+  .item.right {
+    width: 262.5px;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+
+  .other {
+    background-color: green;
+    height: 30px;
+  }
+
+  .clear_fix::after {
+    content: "";
+    clear: both;
+    /* 伪元素行内级非替换元素 必须变成块级元素 */
+    display: block;
+    /* 浏览器兼容 */
+    visibility: hidden;
+    height: 0;
+  }
+
+  .clear_fix {
+    /* IE6/7 */
+    zoom: 1;
+  }
+</style>
+
+<body>
+
+  <div class="content">
+    <div class="warpper clear_fix">
+      <div class="item left">1</div>
+      <div class="item left">2</div>
+      <div class="item right">3</div> 
+      <div class="item right">4</div>
+      <div class="item right">5</div>
+      <div class="item right">6</div>
+    </div>
+  </div>
+
+  <!-- 设置浮动以后脱标不向父元素汇报高度 导致高度塌陷，浮动下面标准元素会顶上去 用clear清除 -->
+  <div class="other"></div> 
+</body>
+
+</html>
