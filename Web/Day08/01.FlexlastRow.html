@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .container {
+    /* 一般不设置高度由内容撑起 */
+    width: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: orange;
+    margin: 0 auto;
+  }
+
+  .item {
+    width: 110px;
+    height: 200px;
+  }
+
+  i {
+    /* 只有宽度，没高度不会影响 container*/
+    width: 110px;
+  }
+</style>
+<body>
+  <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <!-- 添加span/i的个数是列数减-2 补足元素避免space-between下最后一行不按顺序排列分布在2端或者元素间隔与摆满有差异-->
+      <i></i><i></i>
+  </div>
+</body>
+</html>
+
+<script src="../js/itemRandomColor.js"></script>

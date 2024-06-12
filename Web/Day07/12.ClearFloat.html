@@ -39,7 +39,7 @@
   .clear_fix::after {
     content: "";
     clear: both;
-    /* 伪元素行内级非替换元素 必须变成块级元素 */
+    /* 伪元素行内级非替换元素 没有宽度不占据位置的 必须变成块级元素独占一行 */
     display: block;
     /* 浏览器兼容 */
     visibility: hidden;
