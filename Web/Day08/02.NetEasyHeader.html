@@ -23,8 +23,12 @@
       /* background-color: red; */
     }
 
+    .topBar .barLeft {
+      display: flex;
+    }
+
     .topBar .barLeft .logo {
-      background: url(./image/topbar_sprite.png) no-repeat 0 0;
+      background-image: url(./image/topbar_sprite.png);
     }
 
     .topBar .barLeft .logo a {
@@ -32,10 +36,6 @@
       width: 157px;
       padding-right: 20px;  
       text-indent: -9999px;
-    }
-
-    .topBar .barLeft {
-      display: flex;
     }
 
     .topBar .barLeft .list {
@@ -73,8 +73,103 @@
     .topBar .barLeft .list .item .icon-hot{
       position: absolute;
       top: 14px;
-      right: -18px;
+      right: -5px;
     }
+
+    .topBar .barRight {
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+    }
+
+    .topBar .barRight .login a {
+      color: #666;
+    }
+
+    .topBar .barRight .login:hover a{
+      color: #787878;
+    }
+
+    .topBar .barRight .login a:hover {
+      color: #666;
+      text-decoration: underline;
+    }
+
+    .topBar .barRight .author a{
+      /* 不然设置宽高没用 */
+      display: inline-block;
+      width: 90px;
+      height: 32px;
+      margin: 0 10px;
+      color: #ccc;
+      box-sizing: border-box;
+      border: 1px solid #4F4F4F;
+      border-radius: 20px;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    .topBar .barRight .author a:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .topBar .barRight .search {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 158px;
+      height: 32px;
+      box-sizing: border-box;
+      padding-right: 10px;
+      border-radius: 30px;
+      background: #fff url(./image/topbar_sprite.png) 0 -99px;
+    }
+
+    .topBar .barRight .search input {
+      font-size: 12px;
+      width: 118px;
+    }
+
+    /* NavBar */
+    .nav {
+      height: 35px;
+      line-height: 35px;
+      box-sizing: border-box;
+      background-color: #C20C0C;
+      border-bottom: 1px solid #a40011;
+    }
+
+    .navbar {
+      box-sizing: border-box;
+      padding-left: 180px;
+    }
+
+    .nav .navbar .list{
+      display: flex;
+    }
+    .nav .navbar .list .item
+    {
+      /* 设置inline-block才能继承.nav的高度35px，不然item的高度就仅仅是span里面文字的高度 从而鼠标到item边缘就可以hover*/
+      display: inline-block;
+    }
+
+    .nav .navbar .list .item span{
+      display: inline-block;
+      height: 20px;
+      padding: 0px 13px;
+      margin: 7px 17px 0;
+      line-height: 21px;
+      color: #fff;
+    }
+
+    .nav .navbar .list .item:hover span,
+    .nav .navbar .list .item.active span
+    {
+      border-radius: 20px;
+      background: #9B0909;
+    }
+
   </style>
 </head>
 <body>
@@ -97,9 +192,33 @@
           </a></li>
         </ul>
       </div>
-      <div class="barRight">barRight</div>
+      <div class="barRight">
+
+        <div class="search">
+          <input type="text" placeholder="音乐/视频/电台/用户">
+        </div>
+        <div class="author">
+          <a href="#">创作者中心</a>
+        </div>
+        <div class="login">
+          <a href="#">登录</a>
+        </div>
+      </div>
     </div>
-    <div class="topNav"></div>
+  </div>
+
+  <div class="nav">
+    <div class="navbar wrapper_01">
+      <ul class="list">
+        <!-- 因为鼠标到item边缘就要hover，但是border的高度又不是整个item，因此包裹一层span去做border -->
+        <li><a href="#" class="item active"><span>推荐</span></a></li>
+        <li><a href="#" class="item"><span>排行榜</span></a></li>
+        <li><a href="#" class="item"><span>歌单</span></a></li>
+        <li><a href="#" class="item"><span>主播电台</span></a></li>
+        <li><a href="#" class="item"><span>歌手</span></a></li>
+        <li><a href="#" class="item"><span>新碟上架</span></a></li>
+      </ul>
+    </div>
   </div>
 </body>
 
