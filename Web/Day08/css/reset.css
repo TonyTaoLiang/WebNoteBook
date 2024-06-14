@@ -17,3 +17,8 @@ input {
   outline: none;
   border: none;
 }
+
+img {
+  /* 图片默认跟文字基线对齐，导致最下面会多出几个px 因此设置vertical-align*/
+  /* vertical-align: top; */
+}
