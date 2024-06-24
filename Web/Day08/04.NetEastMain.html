@@ -19,6 +19,11 @@
       background: url(./image/main_bg.png);
     }
 
+    .main .area-left {
+      width: 729px;
+      padding: 20px 20px 40px;
+    }
+
     .main .area-right {
       position: relative;
       width: 250px;
@@ -70,6 +75,45 @@
       padding: 20px;
     }
         
+    .main .settle-singer .list {
+      padding: 5px 0;
+    }
+
+    .main .settle-singer .list .item {
+      /* 如果给a元素设置flex会把他当成一个block元素。可以设置宽高 */
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      width: 210px;
+      height: 62px;
+      background: #fafafa;
+    }
+
+    .main .settle-singer .item .info{
+      display: flex;
+      /* 拉伸占据整个宽度 */
+      flex: 1;
+      flex-direction: column;
+      justify-content: space-around;
+      /* align-items: left; */
+      padding: 3px 12px;
+      border: 1px solid #e9e9e9;
+      border-left: none;
+    }
+
+    .main .settle-singer .item .info .singer {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .main .settle-singer .item .info .desc {
+      font-size: 12px;
+      color: #666;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   </style>
 </head>
 
@@ -77,7 +121,27 @@
   <div class="main">
     <div class="area wrapper_02">
       <div class="area-left">
-
+        <div class="recommend-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">热门推荐</h2>
+              <ul class="keywords">
+                <li><a href="" class="item">华语</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">流行</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">摇滚</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">民谣</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">电子</a></li>
+              </ul>
+            </div>
+            <div class="area_right">
+              <a class="more" href="#">更多</a>
+            </div>
+          </div>
+        </div>
       </div>  
       <div class="area-right">
         <div class="vip-card">
@@ -94,6 +158,54 @@
             <h3 class="title">入驻歌手</h3>
             <a class="more" href="">查看全部 &gt;</a>
           </div>
+          <ul class="list">
+            <li><a href="#" class="item">
+              <div class="album">
+                <img src="./image/singer_01.jpeg" alt="">
+              </div>
+              <div class="info">
+                <div class="singer">张惠妹aMEI</div>
+                <div class="desc">台湾歌手张惠妹</div>
+              </div>
+              <li><a href="#" class="item">
+                <div class="album">
+                  <img src="./image/singer_01.jpeg" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+              <li><a href="#" class="item">
+                <div class="album">
+                  <img src="./image/singer_01.jpeg" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+              <li><a href="#" class="item">
+                <div class="album">
+                  <img src="./image/singer_01.jpeg" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+              <li><a href="#" class="item">
+                <div class="album">
+                  <img src="./image/singer_01.jpeg" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </a>
+          </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -101,4 +213,3 @@
 </body>
 
 </html>
-<!-- 如果给a元素设置flex会把他当成一个block元素。可以设置宽高 -->

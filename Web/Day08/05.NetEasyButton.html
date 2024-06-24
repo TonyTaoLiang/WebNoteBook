@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/reset.css">
+
+  <style>
+    body {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .apply {
+      display: inline-block;
+      width: 210px; 
+      height: 31px;
+      line-height: 31px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      box-sizing: border-box;
+      /* 给右侧半边圆角图片留位置 */
+      /* padding: 0 5px 0 0; */
+      /* 右半边是right */
+      /* background: url(./image/btn_sprite.png) right -100px; */
+    }
+
+    i {
+      /* a元素内部垫一层i元素设置图片的另外一边 */
+      /* 必须设置为block，否则图片只包裹i元素文字长度，不能包括整个元素长度 */
+      /* display: block;
+      padding-left: 3px;
+      height: 31px;
+      background: url(./image/btn_sprite.png) 0 -59px;; */
+    }
+  </style>
+ 
+</head>
+<body>
+  <!-- 按钮有背景，但是由于按钮长度不定，因此把有圆角的图片裁成2半分别设置 -->
+   <a href="#" class="apply btn_sprite btn_type_01_sup">
+    <i class="btn_sprite btn_type_01_sub">申请成为网易音乐人</i>
+   </a>
+</body>
+</html>

@@ -27,3 +27,22 @@ body {
   height: 19px;
   background-position: -190px 0;
 }
+
+.btn_sprite {
+  display: inline-block;
+  background: url(../image/btn_sprite.png);
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+}
+
+.btn_type_01_sup {
+  background-position: right -100px;
+  padding-right: 5px;
+}
+
+.btn_type_01_sub {
+  display: block;
+  background-position: 0 -59px;
+  padding-left: 3px;
+}
