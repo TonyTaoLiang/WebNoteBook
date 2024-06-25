@@ -46,3 +46,34 @@ body {
   background-position: 0 -59px;
   padding-left: 3px;
 }
+
+/* icon_sprite */
+.icon_sprite {
+  display: inline-block;
+  background-image: url(../image/icon_sprite.png);
+}
+
+.icon_sprite_music {
+  background-position: 0px -24px;
+  width: 14px;
+  height: 11px;
+}
+
+.icon_sprite_play {
+  background-position: 0px 0px;
+  width: 16px;
+  height: 17px;
+}
+
+
+/* iconall_sprite */
+.iconall_sprite {
+  display: inline-block;
+  background-image: url(../image/iconall_sprite.png);
+}
+
+.iconall_sprite_radio {
+  background-position: -31px -658px;
+  width: 35px;
+  height: 15px;
+}
