@@ -1,0 +1,9 @@
+.main .area {
+  display: flex;
+  justify-content: space-between;
+  min-height: 700px;
+  margin: 0 auto;
+  border: 1px solid #d3d3d3;
+  border-width: 0 1px;
+  background: url(../image/main_bg.png);
+}

@@ -1,0 +1,79 @@
+body {
+  font: 12px Arial, Helvetica, sans-serif;
+}
+
+.wrapper_01 {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.wrapper_02 {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.wrapper_03 {
+  width: 982px;
+  margin: 0 auto;
+}
+
+.topbar_sprite {
+  display: inline-block;
+  background-image: url(../image/topbar_sprite.png);
+}
+
+.topbar_icon_hot {
+  width: 28px;
+  height: 19px;
+  background-position: -190px 0;
+}
+
+.btn_sprite {
+  display: inline-block;
+  background: url(../image/btn_sprite.png);
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+}
+
+.btn_type_01_sup {
+  background-position: right -100px;
+  padding-right: 5px;
+}
+
+.btn_type_01_sub {
+  display: block;
+  background-position: 0 -59px;
+  padding-left: 3px;
+}
+
+/* icon_sprite */
+.icon_sprite {
+  display: inline-block;
+  background-image: url(../image/icon_sprite.png);
+}
+
+.icon_sprite_music {
+  background-position: 0px -24px;
+  width: 14px;
+  height: 11px;
+}
+
+.icon_sprite_play {
+  background-position: 0px 0px;
+  width: 16px;
+  height: 17px;
+}
+
+
+/* iconall_sprite */
+.iconall_sprite {
+  display: inline-block;
+  background-image: url(../image/iconall_sprite.png);
+}
+
+.iconall_sprite_radio {
+  background-position: -31px -658px;
+  width: 35px;
+  height: 15px;
+}

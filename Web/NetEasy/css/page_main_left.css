@@ -1,0 +1,328 @@
+.main .area-left {
+  width: 729px;
+  padding: 20px 20px 40px;
+}
+
+.recommend-section .list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 5px;
+}
+
+.recommend-section .list .item {
+  width: 140px;
+  height: 188px;
+  margin-bottom: 40px;
+}
+
+.recommend-section .list .item .top {
+  position: relative;
+  height: 140px;
+}
+
+.recommend-section .list .item .top .cover {
+  background: url(../image/cover_sprite.png) 0 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.recommend-section .list .item .top .info {
+  background: url(../image/cover_sprite.png) no-repeat 0px -537px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 27px;
+  line-height: 27px;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.recommend-section .list .item .top .info .icon-music {
+  position: relative;
+  top: 1px;
+}
+
+.recommend-section .list .item .top .info .count {
+  margin-left: 4px;
+}
+
+.recommend-section .list .item .top .info .icon-play {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto 0;
+}
+
+/* 底部的样式 */
+.recommend-section .list .item .bottom {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.recommend-section .list .item .bottom:hover {
+  text-decoration: underline;
+}
+
+.recommend-section .list .item .bottom .icon-radio {
+  /*relative相对于自己原来的位置*/
+  position: relative;
+  top: 2px;
+}
+
+.disc-section .content {
+  height: 186px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  background-color: #f5f5f5;
+}
+
+.disc-section .content .inner {
+  position: relative;
+  height: 100%;
+  padding: 0 25px;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+
+.disc-section .content .inner .roller {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+}
+
+.disc-section .content .inner .roller .list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* 不压缩占据整个item宽度 */
+  flex-shrink: 0;
+}
+
+.disc-section .content .inner .roller .list .item {
+  width: 118px;
+  height: 150px;
+  background: url(../image/main_sprite.png) no-repeat -260px 100px;
+}
+
+.disc-section .roller .list .item .album {
+  position: relative;
+}
+
+.disc-section .roller .list .item .album .cover{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../image/cover_sprite.png) no-repeat 0 -570px;
+}
+
+.disc-section .roller .item .album .play {
+  display: none;
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+  width: 22px;
+  height: 22px;
+  background: url(../image/icon_sprite.png) 0 -85px;
+}
+
+.disc-section .roller .item .album:hover .play {
+  display: block;
+}
+
+.disc-section .roller .list .item a {
+  /* 设为block独占一行*/
+  display: block;
+  margin-top: 5px;
+  padding-right: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.disc-section .roller .list .item a:hover {
+  text-decoration: underline;
+}
+
+.disc-section .roller .list .item a.title {
+  color: #000;
+  margin-top: 8px;
+}
+
+.disc-section .roller .list .item a.anchor {
+  color: #666;
+}
+
+.disc-section .content .inner .control {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background-image: url(../image/main_sprite.png);
+}
+
+.disc-section .content .inner .control-left {
+  left: 5px;
+  background-position: -260px -75px;
+}
+
+.disc-section .content .inner .control-right {
+  right: 5px;
+  background-position: -320px -75px;
+}
+
+.rank-section .content {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-top: 20px;
+  height: 472px;
+  background: url(../image/rank_bg.png);
+}
+
+.rank-section .content .rank {
+  width: 230px;
+  height: 100%;
+}
+
+.rank-section .content .rank .header {
+  display: flex;
+  height: 120px;
+  box-sizing: border-box;
+  padding: 20px 0 0 20px;
+}
+.rank-section .content .rank .header .album{
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.rank-section .rank .header .album img {
+  width: 100%;
+  height: 100%;
+}
+
+.rank-section .rank .header .album .cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../image/cover_sprite.png) -145px -57px;
+}
+
+.rank-section .content .rank .header .info {
+  padding: 10px 0 0 10px;
+}
+
+.rank-section .rank .header .info .btn {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-top: 10px;
+  background: url(../image/main_sprite.png) no-repeat;
+}
+
+.rank-section .rank .header .info .btn.play {
+  background-position: -267px -205px;
+}
+
+.rank-section .rank .header .info .btn.play:hover {
+  background-position: -267px -235px;
+}
+
+.rank-section .rank .header .info .btn.favor {
+  margin-left: 5px;
+  background-position: -300px -205px;
+}
+
+.rank-section .rank .header .info .btn.favor:hover {
+  background-position: -300px -235px;
+}
+
+.rank-section .rank .list {
+  padding-left: 15px;
+}
+
+.rank-section .rank .list .item{
+  display: flex;
+  height: 32px;
+  line-height: 32px;
+}
+
+.rank-section .rank .list .item:nth-child(-n+3) .no {
+  color: red;
+}
+
+.rank-section .rank .list .item .no {
+  width: 35px;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.rank-section .rank .list .item .song {
+  flex: 1;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.rank-section .rank .list .item .song:hover {
+  text-decoration: underline;
+}
+
+.rank-section .rank .list .item:hover .operation {
+  display: flex;
+}
+
+.rank-section .rank .list .item .operation {
+  display: none;
+  align-items: center;
+  width: 82px;
+}
+
+.rank-section .rank .list .item .operation .btn {
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  background: url(../image/main_sprite.png);
+}
+
+.rank-section .rank .list .item .operation .btn.play {
+  background-position: -267px -268px;
+}
+
+.rank-section .rank .list .item .operation .btn.add {
+  background-image: url(../image/iconall_sprite.png);
+  background-position: 2px -698px
+}
+
+.rank-section .rank .list .item .operation .btn.favor {
+  background-position: -297px -268px;
+}
+
+.rank-section .rank .list .more{
+  height: 32px;
+  line-height: 32px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.rank-section .rank .list .more a:hover {
+  text-decoration: underline;
+}

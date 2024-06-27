@@ -1,0 +1,113 @@
+.banner {
+  /* 设置很大的宽度6000px是为了拉伸满高斯模糊效果  "/"固定写法postion后面接size */
+  background: url(../image/banner_bg_02.jpeg) center center / 6000px;
+}
+
+.banner .area {
+  position: relative;
+  background-color: orange;
+  height: 285px;
+}
+
+.banner .area .banner-left {
+  position: relative;
+  width: 730px;
+}
+
+.banner .area .banner-left .img-list {
+  display: flex;
+  /*设置了flex-shrink之后，超出范围的item隐藏掉*/
+  overflow: hidden;
+}
+
+.banner .area .banner-left .img-list li {
+  /* 必须在flex-item设置此压缩属性 li才是img-list的flex-item*/
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.banner .area .banner-left .item img {
+  width: 100%;
+  height: 285px;
+}
+
+.banner .area .banner-left .dotlist {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 20px;
+  top: 259px;
+  left: 0;
+  right: 0;
+}
+
+.banner .area .banner-left .dotlist .dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../image/banner_sprite.png) 3px -343px;
+}
+
+.banner .area .banner-left .dotlist .dot.active,
+.banner .area .banner-left .dotlist .dot:hover {
+  background-position: -16px -343px;
+}
+
+.banner .area .banner-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  width: 254px;
+  background-image: url(../image/download_sprite.png);
+}
+
+.banner .area .banner-right .download {
+  /* 定位按钮在图片中的位置 */
+  display: block;
+  width: 215px;
+  height: 56px;
+  margin: 186px 0 0 19px;
+  /* 去掉文字 */
+  text-indent: -9999px;
+}
+
+.banner .area .banner-right .download:hover {
+  /* 选中时切换按钮图片 */
+  background-image: url(../image/download_sprite.png);
+  background-position: 0 -290px;
+}
+
+.banner .area .banner-right p {
+  margin: 10px auto;
+  text-align: center;
+  color: #8d8d8d;
+}
+
+.banner .area .control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 37px;
+  height: 63px;
+  background: url(../image/banner_sprite.png);
+}
+
+.banner .area .control.left {
+  left: -70px;
+  background-position: 0 -360px;
+}
+
+.banner .area .control.right {
+  right: -70px;
+  background-position: 0 -508px;
+}
+
+.banner .area .control.left:hover {
+  background-position: 0 -430px;
+}
+
+.banner .area .control.right:hover {
+  background-position: 0 -578px;
+}
