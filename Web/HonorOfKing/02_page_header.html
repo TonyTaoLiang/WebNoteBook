@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/common.css">
+  <link rel="stylesheet" href="./CSS/reset.css">
+
+  <style>
+    .header {
+      background: rgba(0,0,0,.8);
+    }
+
+    .header .area {
+      display: flex;
+      justify-content: space-between;
+      height: 84px;
+      /* line-height: 84px; */
+    }
+
+    .header .area .left-area {
+      /* 设置为flex后，.logo的高度会被拉伸，就有了高度，不设置之前logo是没有高度的是被a元素撑起来。这样下面a设置top: 50%;就不起作用 */
+      display: flex;
+    }
+
+    .header .area .left-area .logo a {
+      position: relative;
+      display: block;
+      /* 以下2行居中 */
+      top: 50%;
+      transform: translate(0,-50%);
+      width: 200px;
+      height: 54px;
+      text-indent: -9999px;
+      background: url(./img/logo.png) no-repeat center center;
+    }
+
+    .header .left-area .nav-list {
+      display: flex;
+      margin-left: 30px;
+    }
+
+    .header .left-area .nav-list .item {
+      width: 115px;
+      box-sizing: border-box;
+      padding-top: 20px;
+      padding-right: 8px;
+    }
+
+    .header .left-area .nav-list .item a {
+      display: block;
+      height: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: #c9c9dd;
+    }
+
+    .header .left-area .nav-list .item .desc {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #858792;
+    }
+
+    .header .left-area .nav-list .item:hover,
+    .header .left-area .nav-list .item.active{
+      background: url(./img/main_sprite.png) no-repeat 0 0;
+    } 
+
+    .header .left-area .nav-list .item:hover a,
+    .header .left-area .nav-list .item.active a{
+      color: #e4b653;
+    } 
+
+    .header .left-area .nav-list .item:hover .desc,
+    .header .left-area .nav-list .item.active .desc{
+      color: #91763f;
+    } 
+
+    .header .right-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .right-area .avatar {
+      margin-right: 10px;
+      border: 1px solid #e4b653;
+      border-radius: 50%;
+    }
+
+    .header .right-area .login a {
+      color: #fff;
+    }
+
+    .header .right-area .login p {
+      font-size: 14px;
+      color: #858792;
+      margin-top: 5px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="header">
+    <div class="area header_wrapper">
+      <div class="left-area">
+        <h1 class="logo">
+          <a href="#">王者荣耀</a>
+        </h1>
+        <ul class="nav-list">
+          <li class="item active">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li><li class="item">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li><li class="item">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li><li class="item">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li><li class="item">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li><li class="item">
+            <a href="#">
+              游戏资料
+              <span class="desc">DATA</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-area">
+        <a class="avatar" href="#">
+          <img src="./img/header_login.png" alt="">
+        </a>
+        <div class="login">
+          <a href="#" class="welcome">欢迎登录</a>
+          <p class="record">登录后查看游戏战绩</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

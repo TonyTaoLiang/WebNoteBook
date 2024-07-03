@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      height: 200px;
+      background-color: orange;
+    }
+
+    .box {
+      position: relative;
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      /* 不要用margin-top这个是父元素宽度的一半 另外注意：设置内层的margin-top会导致传递到上层的.box 参考Day05/02 margin设置兄弟元素。padding设置父子元素*/   
+      /* margin-top: 10%; */
+      /* 先往下父元素高度的一半 */
+      top: 50%;
+      /* 再往上移动自己高度的一半 */
+      transform: translate(0,-50%);
+      box-shadow: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+    </div>
+  </div>
+</body>
+</html>
