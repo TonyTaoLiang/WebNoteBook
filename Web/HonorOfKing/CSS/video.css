@@ -1,0 +1,89 @@
+.video_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.video_item {
+  display: block;
+  width: 212px;
+  margin-bottom: 20px;
+}
+
+.video_item .album {
+  position: relative;
+}
+
+.video_item .album img {
+  width: 100%;
+}
+
+.video_item .album .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 22px;
+  line-height: 22px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 10px;
+  color: white;
+  background-color: rgb(0,0,0,.6);
+}
+
+.video_item .album .info .count {
+  padding-left: 16px;
+  background: url(../img/main_sprite.png) no-repeat -256px -59px;
+}
+
+.video_item .album .cover {
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color:  rgb(0,0,0,.6);
+  /* 除了用transition，还可以配合display: none使用帧动画。 */
+  transition: opacity 200ms ease-in;
+}
+
+.video_item:hover .album .cover {
+  /* display: block; */
+  opacity: 1;
+  /* animation: video_item_cover 200ms ease-in forwards; */
+}
+
+/* @keyframes video_item_cover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+.video_item:hover .album .cover .icon_play {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  background: url(../img/main_sprite.png) no-repeat -192px -64px;
+}
+
+.video_item .desc {
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 只显示2行 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

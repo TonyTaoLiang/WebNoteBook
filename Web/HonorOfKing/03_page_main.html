@@ -1,28 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./CSS/common.css">
   <link rel="stylesheet" href="./CSS/reset.css">
-
+  <link rel="stylesheet" href="./CSS/video.css">
   <style>
-
     .main .news-section {
       display: flex;
       height: 342px;
+      background: url(./img/news_bg.png) no-repeat;
     }
 
+    /* Banner */
     .main .news-section .banner {
       width: 605px;
-      background-color: red;
     }
 
+    .news-section .banner .image-list {
+      display: flex;
+      width: 604px;
+      overflow: hidden;
+    }
+
+    .news-section .banner .image-list .item {
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .news-section .banner .image-list .item a {
+      display: block;
+      width: 100%;
+    }
+
+    .news-section .banner .image-list .item a img {
+      width: 100%;
+    }
+
+    .news-section .banner .title-list {
+      display: flex;
+      height: 44px;
+      line-height: 44px;
+    }
+
+    .news-section .banner .title-list .item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .news-section .banner .title-list .item a {
+      /* 行内非替换元素需要改成block，继承的line-Height后才能把a撑起来，不然还是包裹内容，高度不会达到44px */
+      display: block;
+      font-size: 14px;
+      color: #b1b2be;
+    }
+
+    .news-section .banner .title-list .item.active a,
+    .news-section .banner .title-list .item a:hover {
+      color: #f3c258;
+      background-color: rgba(255, 255, 255, .15);
+    }
+
+    /* News */
     .main .news-section .news {
       /* 中间这块区域设置可拉伸，有扩展性 。左右宽度定死*/
       flex: 1;
-      background-color: yellow;
+      /* 必须设置hidden，子元素才能显示点点 */
+      overflow: hidden;
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+
+    .main .news-section .news .title-list {
+      display: flex;
+      border-bottom: 1px solid #000;
+    }
+
+    .main .news-section .news .title-list .item {
+      flex: 1;
+      width: 52px;
+      text-align: center;
+    }
+
+    .news-section .news .title-list .item.active a,
+    .news-section .news .title-list .item:not(.more) a:hover {
+      color: #f3c258;
+      border-bottom: 3px solid #f3c258;
+    }
+
+    .main .news-section .news .title-list .item a {
+      display: block;
+      /* 高度设48 border就会从下方动画进来，设为45就是由45~48border就由上往下动画增长*/
+      height: 48px;
+      line-height: 45px;
+      box-sizing: border-box;
+      color: #b8b9c5;
+      transition: border-bottom 200ms ease-in;
+    }
+
+    .main .news-section .news .notice {
+      height: 36px;
+      line-height: 36px;
+      margin-top: 18px;
+      padding: 0 15px;
+      background: #414046;
+    }
+
+    .main .news-section .news .notice>a {
+      font-size: 18px;
+      color: #f3c258;
+    }
+
+    .news-section .news .news-list {
+      margin-top: 12px;
+    }
+
+    .news-section .news .news-list .item {
+      /* 设置为flex a元素就有宽高 不是auto 就可显示... */
+      display: flex;
+      align-items: center;
+      margin-bottom: 11px;
+    }
+
+    .main .news-section .news .news-list .item .desc {
+      color: #b8b9c5;
+    }
+
+    .main .news-section .news .news-list .item .date {
+      /* white-space: nowrap; */
+      color: #b8b9c5;
     }
 
     .main .news-section .download {
@@ -48,21 +157,362 @@
       height: 108px;
       background-position: 0 -461px;
     }
+
+    /* Entrance */
+    .main .entrance-section {
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 0px;
+    }
+
+    .main .entrance-section .item {
+      width: 291px;
+      height: 134px;
+    }
+
+    .main .entrance-section a {
+      display: block;
+      /* 放大后超出区域裁剪 */
+      overflow: hidden;
+    }
+
+    .main .entrance-section a img {
+      transition: transform 400ms ease;
+    }
+
+    .main .entrance-section .item a:hover img{
+      transform: scale(1.1);
+    }
+
+    .main .section-content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Content */
+    .main .content-section .left-content {
+      width: 872px;
+      height: 1000px;
+    }
+
+    .main .section-content .right-content {
+      width: 295px;
+      height: 500px;
+    }
+
   </style>
 </head>
+
 <body>
   <div class="main main_wrapper">
     <div class="news-section">
-      <div class="banner"></div>
-      <div class="news"></div>
+      <div class="banner">
+        <ul class="image-list">
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <img src="./img/banner_01.jpeg" alt="">
+            </a>
+          </li>
+        </ul>
+        <ul class="title-list">
+          <li class="item active">
+            <a href="">K甲TOP3</a>
+          </li>
+          <li class="item">
+            <a href="">K甲TOP3</a>
+          </li>
+          <li class="item">
+            <a href="">K甲TOP3</a>
+          </li>
+          <li class="item">
+            <a href="">K甲TOP3</a>
+          </li>
+          <li class="item">
+            <a href="">K甲TOP3</a>
+          </li>
+        </ul>
+      </div>
+      <div class="news">
+        <ul class="title-list">
+          <li class="item active">
+            <a href="">热门</a>
+          </li>
+          <li class="item">
+            <a href="">新闻</a>
+          </li>
+          <li class="item">
+            <a href="">赛事</a>
+          </li>
+          <li class="item">
+            <a href="">公告</a>
+          </li>
+          <li class="item">
+            <a href="">活动</a>
+          </li>
+          <li class="item more">
+            <a href="">...</a </li>
+        </ul>
+        <p class="notice">
+          <a href="#">王者荣耀共创作品库开启公告</a>
+        </p>
+        <ul class="news-list">
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_notice" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看！
+            </a>
+            <span class="date">06/25</span>
+          </li>
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_notice" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看！
+            </a>
+            <span class="date">06/25</span>
+          </li>
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_hot" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看！
+            </a>
+            <span class="date">06/25</span>
+          </li>
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_hot" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看！
+            </a>
+            <span class="date">06/25</span>
+          </li>
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_news" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看！
+            </a>
+            <span class="date">06/25</span>
+          </li>
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_news" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看!
+            </a>
+            <span class="date">06/25</span>
+          </li>
+          <li class="item">
+            <a class="desc nowrap_ellipsis news_type news_type_news" href="">
+              音你X源梦研发站开启：狂铁阿轲源梦皮肤角色调整抢先看!
+            </a>
+            <span class="date">06/25</span>
+          </li>
+        </ul>
+
+      </div>
       <div class="download">
         <a href="" class="game"></a>
         <a href="" class="envirment"></a>
         <a href="" class="experience"></a>
       </div>
     </div>
-    <div class="content-section"></div>
-    <div class="match-section"></div>
+    <ul class="entrance-section">
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance_01.jpg" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance_02.png" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance_03.jpg" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance_04.png" alt="">
+        </a>
+      </li>
+    </ul>
+    <div class="content-section">
+      <div class="left-content">
+        <div class="content-center">
+          <div class="section_header">
+            <div class="header_left">
+              <h3 class="title">内容中心</h3>
+            </div>
+            <div class="header_right">
+              <a class="more" href="#">更多</a>
+            </div>
+          </div>
+          <div class="tab_control">
+            <div class="item active">精品栏目</div>
+            <div class="line"></div>
+            <div class="item">赛事精品</div>
+            <div class="line"></div>
+            <div class="item">英雄攻略</div>
+          </div>
+          <div class="tab_keyword">
+            <div class="item active">最新</div>
+            <div class="item">马菠萝奇闻录</div>
+            <div class="item">马菠萝奇</div>
+            <div class="item">王者克纸轮</div>
+            <div class="item">王者视角</div>
+            <div class="item">峡谷460</div>
+            <div class="item">百星王者带你非</div>
+            <div class="item">王者克纸轮</div>
+            <div class="item">王者视角</div>
+            <div class="item">峡谷460</div>
+            <div class="item">百星王者带你非</div>
+            <div class="item">王者克纸轮</div>
+            <div class="item">王者视角</div>
+            <div class="item">峡谷460</div>
+            <div class="item">百星王者带你非</div>
+          </div>
+
+          <div class="video_list">
+            <a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a>
+            <a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a>
+            <a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a>
+            <a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a><a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a><a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a>
+            <a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a>
+            <a href="#" class="video_item">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="info">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="match-center">
+        </div>
+      </div>
+      <div class="right-content"></div>
+    </div>
   </div>
 </body>
+
 </html>
