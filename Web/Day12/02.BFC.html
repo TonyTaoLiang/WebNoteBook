@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+
+  <style>
+    /* margin */
+    .box1 {
+      background-color: orange;
+      margin-bottom: 100px;
+      height: 200px;
+    }
+
+    .box2 {
+      background-color: red;
+      margin-top: 50px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      /* 触发BFC */
+      overflow: auto;
+    }
+
+
+    /* float高度塌陷 */
+    .floatContain {
+      /* height: auto;  默认就是auto*/
+      background-color: yellow;
+      /* float脱离标准流，但触发BFC后 floatContain的高度就出现有了*/
+      overflow: auto; 
+    }
+
+    .item {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: blueviolet;
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  
+<!-- A block formatting context (BFC) is a part of a visual CSS rendering of a web page. It's the region in which the layout of block boxes occurs and in which floats interact with other elements. -->
+<!-- 类似的inline元素是IFC -->
+<!-- A block formatting context is created by at least one of the following:
+  以下情况会形成一个新的BFC
+  1.The root element of the document (<html>). 根元素
+  2.Block elements where overflow has a value other than visible and clip.  overflow=auto
+  3.......
+  4.......-->
+ 
+  <!-- BFC解决什么问题 
+   1.margin折叠 （形成一个新的BFC就不会折叠）
+
+   在同一个BFC中，相邻两个box之间的margin会折叠（collapse）
+ 官方文档明确的有说
+ The vertical distance between two sibling boxes is determined by the 'margin' properties. Vertical margins
+between adjacent block-level boxes in a block formatting context collapse.
+ 那么如果我们让两个box是不同的BFC呢？那么就可以解决折叠问题。-->
+
+   <div class="container">
+    <!-- 属于container的BFC -->
+    <div class="box1">
+
+    </div>
+
+   </div>
+
+   <!-- 属于html的BFC -->
+   <!-- <div class="box1">
+
+   </div> -->
+
+   <!-- 属于html的BFC -->
+   <div class="box2">
+
+   </div>
+
+
+
+   <!-- 2.float高度塌陷 -->
+   <!-- 网上有很多说法，BFC可以解决浮动高度塌陷，可以实现清除浮动的效果。
+    但是从来没有给出过BFC可以解决高度塌陷的原理或者权威的文档说明；
+    他们也压根没有办法解释，为什么可以解决浮动高度的塌陷问题，但是不能解决绝对定位元素的高度塌陷问题呢？
+
+   ◼ 事实上，BFC解决高度塌陷需要满足两个条件：
+    浮动元素的父元素触发BFC，形成独立的块级格式化上下文（Block Formatting Context）；
+    浮动元素的父元素的高度是auto的；
+
+   ◼ BFC的高度是auto的情况下，是如下方法计算高度的
+    1.如果只有inline-level，是行高的顶部和底部的距离；
+    2.如果有block-level，是由最底层的块上边缘和最底层
+   块盒子的下边缘之间的距离
+    3.如果有绝对定位元素，将被忽略；
+    4.如果有浮动元素，那么会增加高度以包括这些浮动元 
+   素的下边缘-->
+
+   <!-- 10.6.7 'Auto' heights for block formatting context roots
+
+   In certain cases (see, e.g., sections 10.6.4 and 10.6.6 above), the height of an element that establishes a block formatting context is computed as follows:
+
+   If it only has inline-level children, the height is the distance between the top of the topmost line box and the bottom of the bottommost line box.
+
+   If it has block-level children, the height is the distance between the top margin-edge of the topmost block-level child box and the bottom margin-edge of the bottommost block-level child box.
+
+   Absolutely positioned children are ignored, and relatively positioned boxes are considered without their offset. Note that the child box may be an anonymous block box.
+
+   In addition, if the element has any floating descendants whose bottom margin edge is below the element's bottom content edge, then the height is increased to include those edges. Only floats that participate in this block formatting context are taken into account, e.g., floats inside absolutely positioned descendants or other floats are not. -->
+
+
+   <div class="floatContain">
+
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+
+   </div>
+
+</body>
+</html>

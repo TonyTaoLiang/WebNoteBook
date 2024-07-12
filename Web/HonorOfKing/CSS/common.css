@@ -1,7 +1,10 @@
+@charset "UTF-8";
+
 body {
   background: #fff;
   font: 14px / 1.5 "Microsoft YaHei", Tahoma, "simsun", sans-serif;
   color: #323235;
+  min-width: 1300px;
 }
 
 .top_wrapper {
@@ -57,6 +60,27 @@ body {
   border-color: #1e96ab;
 }
 
+.match_news_type::before {
+  content: "";
+  height: 19px;
+  line-height: 19px;
+  margin-right: 12px;
+  font-size: 12px;
+  background: #e3e3e3;
+  border-radius: 10px;
+  border: 2px solid #e3e3e3;
+  text-align: center;
+  color: #999999;
+}
+
+.match_news_type_kpl::before {
+  content: "KPL";
+}
+
+.match_news_type_challenge::before {
+  content: "挑战者杯";
+}
+
 .section_header {
   display: flex;
   justify-content: space-between;
@@ -71,8 +95,13 @@ body {
   background: url(../img/main_sprite.png) no-repeat 0 -102px;
 }
 
+.section_header .header_left .title-icon-match {
+  background-position: 0 -180px;
+}
+
 .section_header .header_right .more {
-  /* 精灵图需要宽高 不然就是文字高度 字体大还好 小的话 图片只会显示一部分 所以设置为block*/
+  /* 精灵图需要宽高 不然就是文字高度 字体大还好 小的话 图片只会显示一部分 还不是居中对齐 所以设置为block 就有了宽高*/
+  /* 不居中对齐 可以调整下backGround-252px 4px  或者verticalign*/
   display: block;
   padding-left: 22px;
   background: url(../img/main_sprite.png) no-repeat -252px 4px;
@@ -84,7 +113,7 @@ body {
 
 .tab_control {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   height: 32px;
   line-height: 29px;
@@ -99,13 +128,21 @@ body {
   border-bottom: 3px solid transparent;
 }
 
+.tab_control>.item.item_wrap {
+  /* 双值：flex-grow | flex-basis */
+  /* 指定了 flex 元素在主轴方向上的初始大小 */
+  /* 默认值。长度等于灵活项目的长度。如果该项目未指定长度，则长度将根据内容决定 */
+  flex: 0 auto;
+  padding: 0 27px;
+}
+
 .tab_control .item:hover,
 .tab_control .item.active {
   border-bottom: 3px solid #f3c258;
   color: #333333;
 }
 
-.tab_control > .line {
+.tab_control>.line {
   width: 1px;
   height: 20px;
   background-color: #e1e1e1;
@@ -117,7 +154,7 @@ body {
   margin-top: 12px;
 }
 
-.tab_keyword > .item {
+.tab_keyword>.item {
   height: 24px;
   line-height: 24px;
   margin: 0 8px 10px 0;
@@ -128,8 +165,8 @@ body {
   cursor: pointer;
 }
 
-.tab_keyword > .item:hover,
-.tab_keyword > .item.active {
+.tab_keyword>.item:hover,
+.tab_keyword>.item.active {
   color: #fff;
   background-color: #f3c258;
   border-color: #f3c258;

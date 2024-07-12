@@ -23,14 +23,33 @@
 
     .top-left .logo a {
       display: block;
+      position: relative;
+      z-index: 11;
       width: 150px;
       text-indent: -9999px;
       background: url(./img/top_logo.png) no-repeat top center;
       background-size: 112px auto;
     }
 
+    .top-left .recommend {
+      position: relative;
+    }
+
+    .top-left .recommend:hover .recommend-ad{
+      display: block;
+    }
+
+    .top-left .recommend .recommend-ad {
+      position: absolute;
+      display: none;
+      z-index: 10;
+      left: -150px;
+      top: 0;
+    }
+
     .top-right {
       display: flex;
+      z-index: 8;
     }
 
     .top-right .growth {
@@ -70,6 +89,35 @@
       opacity: 0.2;
       transform: rotate(90deg);
     }
+
+    .top-right .ranking .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 42px;
+      /* opacity: 0; */
+      animation: opacityChange 200ms ease-in;
+      /* transition: opacity 200ms ease-in; */
+    }
+
+    @keyframes opacityChange {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .top-right .ranking .dropdown iframe {
+      width: 1020px;
+      height: 658px;
+    }
+
+    .top-right .ranking:hover .dropdown{
+      display: block;
+      /* opacity: 1; */
+    }
+
   </style>
 </head>
 
@@ -81,11 +129,18 @@
       </h2>
       <div class="recommend">
         <img src="./img/recommend_game.jpg" alt="">
+        <a href="#" class="recommend-ad">
+          <img src="./img/recommend_ad.jpg" alt="">
+        </a>
       </div>
     </div>
     <div class="top-right">
       <a class="growth" href="#">成长守护平台</a>
-      <a class="ranking" href="#">腾讯热门游戏推荐</a>
+      <a class="ranking" href="#">腾讯热门游戏推荐
+        <div class="dropdown">
+          <iframe src="https://game.gtimg.cn/images/js/title/title_game_rank.html" frameborder="0"></iframe>
+        </div>
+      </a>
     </div>
   </div>
 </body>

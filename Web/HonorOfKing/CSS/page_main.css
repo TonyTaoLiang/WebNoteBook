@@ -1,0 +1,232 @@
+.main .news-section {
+  display: flex;
+  height: 342px;
+  background: url(../img/news_bg.png) no-repeat;
+}
+
+/* Banner */
+.main .news-section .banner {
+  width: 605px;
+}
+
+.news-section .banner .image-list {
+  display: flex;
+  width: 604px;
+  overflow: hidden;
+}
+
+.news-section .banner .image-list .item {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.news-section .banner .image-list .item a {
+  display: block;
+  width: 100%;
+}
+
+.news-section .banner .image-list .item a img {
+  width: 100%;
+}
+
+.news-section .banner .title-list {
+  display: flex;
+  height: 44px;
+  line-height: 44px;
+}
+
+.news-section .banner .title-list .item {
+  flex: 1;
+  text-align: center;
+}
+
+.news-section .banner .title-list .item a {
+  /* 行内非替换元素需要改成block，继承的line-Height后才能把a撑起来，不然还是包裹内容，高度不会达到44px */
+  display: block;
+  font-size: 14px;
+  color: #b1b2be;
+}
+
+.news-section .banner .title-list .item.active a,
+.news-section .banner .title-list .item a:hover {
+  color: #f3c258;
+  background-color: rgba(255, 255, 255, .15);
+}
+
+/* News */
+.main .news-section .news {
+  /* 中间这块区域设置可拉伸，有扩展性 。左右宽度定死*/
+  flex: 1;
+  /* 必须设置hidden，子元素才能显示点点 */
+  overflow: hidden;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+.main .news-section .news .title-list {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+.main .news-section .news .title-list .item {
+  flex: 1;
+  width: 52px;
+  text-align: center;
+}
+
+.news-section .news .title-list .item.active a,
+.news-section .news .title-list .item:not(.more) a:hover {
+  color: #f3c258;
+  border-bottom: 3px solid #f3c258;
+}
+
+.main .news-section .news .title-list .item a {
+  display: block;
+  /* 高度设48 border就会从下方动画进来，设为45就是由45~48border就由上往下动画增长*/
+  height: 48px;
+  line-height: 45px;
+  box-sizing: border-box;
+  color: #b8b9c5;
+  transition: border-bottom 200ms ease-in;
+}
+
+.main .news-section .news .notice {
+  height: 36px;
+  line-height: 36px;
+  margin-top: 18px;
+  padding: 0 15px;
+  background: #414046;
+}
+
+.main .news-section .news .notice>a {
+  font-size: 18px;
+  color: #f3c258;
+}
+
+.news-section .news .news-list {
+  margin-top: 12px;
+}
+
+.news-section .news .news-list .item {
+  /* 设置为flex a元素就有宽高 不是auto 就可显示... */
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.main .news-section .news .news-list .item .desc {
+  color: #b8b9c5;
+}
+
+.main .news-section .news .news-list .item .date {
+  /* white-space: nowrap; */
+  color: #b8b9c5;
+}
+
+.main .news-section .download {
+  width: 236px;
+}
+
+.news-section .download a {
+  display: block;
+  background: url(../img/main_sprite.png) no-repeat;
+}
+
+.news-section .download .game {
+  height: 128px;
+  background-position: 0 -219px;
+}
+
+.news-section .download .envirment {
+  height: 106px;
+  background-position: 0 -350px;
+}
+
+.news-section .download .experience {
+  height: 108px;
+  background-position: 0 -461px;
+}
+
+/* Entrance */
+.main .entrance-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0px;
+}
+
+.main .entrance-section .item {
+  width: 291px;
+  height: 134px;
+}
+
+.main .entrance-section a {
+  display: block;
+  /* 放大后超出区域裁剪 */
+  overflow: hidden;
+}
+
+.main .entrance-section a img {
+  transition: transform 400ms ease;
+}
+
+.main .entrance-section .item a:hover img{
+  transform: scale(1.1);
+}
+
+.main .section-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Content */
+.main .content-section .left-content {
+  width: 872px;
+  height: 1000px;
+}
+
+.content-section .match-center .match-news {
+  display: flex;
+  height: 260px;
+  margin: 20px 0 15px;
+}
+
+.content-section .match-center .match-news .news-img {
+  width: 211px;
+}
+
+.content-section .match-center .match-news .news-content {
+  flex: 1;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+.content-section .match-center .match-news .news-content .title {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.content-section .match-center .match-news .news-content .title:hover {
+  text-decoration: underline;
+}
+
+.content-section .match-center .match-news .news-content .sub-title {
+  font-size: 14px;
+  color: #666666;
+}
+
+.content-section .match-center .match-news .news-content .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.content-section .match-center .match-news .news-content .item .date {
+  font-size: 12px;
+  color: #b8b9c5;
+}
+
+.main .section-content .right-content {
+  width: 295px;
+  height: 500px;
+}
