@@ -1,0 +1,45 @@
+@maincolor: red;
+@childcolor: blue;
+@linkcolor: green;
+
+// 要混入的代码（重复的，多处会用到的）
+.nowrap_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.borderPar(@borderwidth:5px, @bordercolor:purple) {
+  border: @borderwidth, solid, @bordercolor;
+}
+
+.boxsize {
+  width: 300px;
+  height: 300px;
+}
+
+.contain {
+  // 混入和映射结合
+  width: .boxsize()[width];
+  height: 300px;
+  color: @maincolor;
+  background-color: aqua;
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: @linkcolor;
+    color: @childcolor;
+    // 混入
+    .nowrap_ellipsis();
+    .borderPar(10px,red)
+  }
+
+  a {
+    color: @linkcolor;
+    // & 当前选择器的父级 &:hover = a:hover
+    &:hover {
+      color: @childcolor;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+
+  <style>
+
+    .container {
+      font-size: 15px;
+    }
+
+      /* em
+      Equal to the computed value of the font-size property of the element on which it is used. */
+    .box {
+      width: 2em;  /*30px 继承了container的font-size*/
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  
+
+
+<!-- rem
+Equal to the computed value of the em unit on the root(html) element. -->
+
+<!-- https://www.w3.org/TR/css-values-3/ -->
+
+<div class="container">
+  <div class="box">
+    hello
+  </div>
+</div>
+</body>
+</html>

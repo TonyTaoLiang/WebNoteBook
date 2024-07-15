@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+
+  <script>
+    const myhtml = document.documentElement
+
+    function resetRem() {
+      const screenWidth = myhtml.clientWidth
+      const dyFont = screenWidth / 10 //一般除以10
+      myhtml.style.fontSize = dyFont + "px"
+    }
+
+    resetRem()
+
+    window.addEventListener("resize", resetRem)
+  </script>
+
+  <style>
+    .box {
+      width: 5rem;
+      height: 5rem;
+      background-color: red;
+    }
+    p {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <p>我是问你</p>
+</body>
+</html>
