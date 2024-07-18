@@ -4,7 +4,7 @@ console.log(typeof ss)
 // 反斜杠表示字符串可插值
 var names = `hello ${ss}`
 
-function sayb () {
+function sayb() {
   console.log(names)
 }
 

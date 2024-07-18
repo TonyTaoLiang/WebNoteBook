@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 关键看函数被谁调用
+    // 1.函数被默认调用指向window
+    function foo() {
+      console.log(this)
+    }
+    foo() //window
+    // 2.函数被对象引用且被对象调用 指向对象
+    var foobar = {
+      fun: function(){
+        console.log(this)
+      }
+    }
+    foobar.fun() //obj
+
+    // 3.虽然被对象引用，但未被对象调用 指向window
+    var bar = {
+      fun: function(){
+        console.log(this)
+      }
+    }
+    var baz = bar.fun
+    baz()//window
+
+    // 4.this的使用场景
+    var bazbar = {
+      name: "Tony",
+      fun: function() {
+        console.log("running", this.name)
+      }
+    }
+    bazbar.fun()
+  </script>
+</body>
+</html>
