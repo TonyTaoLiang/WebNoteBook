@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="box">
+
+  </div>
+
+  <script>
+
+    // 构造函数 ES6之前没有Class，用function代替
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    var kobe = Person("kobe", 23)
+    // 清除array让length为0
+    var array = [1,2,3]
+    console.log(array.length)
+    array.length = 0
+    console.log(array)
+
+    // 查找array
+    var array2 = [
+      {id: 100, name: "kobe"},
+      {id: 101, name: "jordan"},
+  ]
+
+  array2.find(function(item){
+    if (item.id === 101) {
+      console.log(item)
+    }
+  })
+
+  array2.fn = 1
+  console.log(array2)
+
+  var ob = {id: 101, name: "Tony"}
+  // js动态 直接给对象新增属性
+  ob.height  = 172
+  console.log(ob)
+
+  // 重写array的find方法(就是函数回调，函数传过去，再回调（回想怎么调用普通函数的，不就是按函数定义的形参把实参传回去）)
+  Array.prototype.tlfind = function(fn) {
+    for (let index = 0; index < this.length; index++) {
+      var flag = fn(index, this[index], this)
+      if (flag) return this[index]
+    }
+  }
+
+  var result = array2.tlfind(function(index, item, array){
+    return item.id === 102
+  })
+
+  console.log("------",result)
+
+
+  var box = document.querySelector(".box")
+
+  </script>
+</body>
+</html>

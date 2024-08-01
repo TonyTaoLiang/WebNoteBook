@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="list"></ul>
+
+  <button class="btn">哈哈</button>
+
+  <script>
+    // var list = document.querySelector(".list")
+    // var isFlag = true
+    // while (isFlag) {
+    //   var message = prompt("请输入")
+    //   if (!message) {
+    //     isFlag = false
+    //     break
+    //   }
+    //   var liEl = document.createElement("li")
+    //   liEl.textContent = message
+    //   list.append(liEl)
+    // }
+
+    var btn = document.querySelector(".btn")
+    btn.onclick = function () {
+      console.log("12345")
+    }
+    btn.onclick = function () {
+      console.log("54321")
+    }
+
+    btn.addEventListener("click",function(){
+      console.log("first")
+    })
+    btn.addEventListener("click",function(){
+      console.log("second")
+    })
+  </script>
+</body>
+</html>
