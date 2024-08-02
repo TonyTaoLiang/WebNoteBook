@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">
+    <button data-action="login">登录</button>
+    <button data-action="resign">注销</button>
+    <button data-action="search">搜索</button>
+  </div>
+
+  <script>
+
+    var box = document.querySelector(".box")
+    box.addEventListener("click", function (event) {
+      var tar = event.target
+      let action = tar.dataset.action
+      switch (action) {
+        case "login":
+          console.log("login")
+          break;
+        case "resign":
+          console.log("resign")
+          break;
+        case "search":
+          console.log("search")
+          break;
+        default:
+          break;
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>
